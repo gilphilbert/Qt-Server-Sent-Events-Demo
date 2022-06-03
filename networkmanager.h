@@ -48,6 +48,7 @@ public:
 signals:
     QList<QSslError> sslErrorsReceived(QNetworkReply *reply, QList<QSslError> sslError);
     QNetworkAccessManager::NetworkAccessibility networkAccessibleChanged(QNetworkAccessManager::NetworkAccessibility state);
+    void eventData(QString event);
 
 public slots:
     void getResource(const QUrl &url);

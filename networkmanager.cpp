@@ -109,6 +109,8 @@ void Network::Manager::streamFinished(QNetworkReply *reply)
 
 void Network::Manager::streamReceived()
 {
+    QString event = QString(m_reply->readAll()).simplified().replace("data: ", "");
+    emit eventData(event);
     qDebug() << "Received event from stream";
     qDebug() << QString(m_reply->readAll()).simplified().replace("data: ", "");
     qDebug() << "-----------------------------------------------------";
